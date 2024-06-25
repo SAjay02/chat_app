@@ -1,10 +1,12 @@
-// import logo from './logo.svg';
-// import './App.css';
-
+import User from "./components/User";
+import Chat from "./components/Chat";
 function App() {
   return (
-    <div>
-      <h></h>
+    <div style={{backgroundColor:"#f5f4f2",maxHeight:"100%",padding:"10px"}}>
+      <>
+        {/* <User/> */}
+        <Chat/>
+      </>
     </div>
   );
 }

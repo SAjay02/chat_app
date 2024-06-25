@@ -1,0 +1,36 @@
+
+.cont
+{
+   display:flex,;
+   flex-direction:column;
+   margin-top:140px;
+   height: 300px;
+   /* background-color: red; */
+}
+.first_cont
+{
+    display: flex;
+    justify-content: center;
+}
+.first_cont_head
+{
+    font-size: 25px;
+}
+.second_cont
+{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.second_cont_inpt
+{
+    border-radius: 5px;
+    
+}
+.second_cont_btn
+{
+    border-radius: 5px;
+    margin-left: 5px;
+    background-color:green;
+    color: white;
+}

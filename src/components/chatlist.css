@@ -1,0 +1,21 @@
+.chat_sender
+{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+}
+
+.chat_sender img, 
+.chat_receiver img{
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+}
+
+.chat_sender p{
+    padding: 10px;
+    margin-left: 2px;
+    background-color:aqua;
+    border-radius: 10px;
+    max-width: 60%;
+}

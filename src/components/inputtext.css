@@ -1,0 +1,17 @@
+.inputtxt_cont
+{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.inputtxt_cont textarea{
+    width: 60%;
+    height: 50px;
+    border-radius: 10px;
+    /* border-width: 0; */
+    padding: 10px;
+    font-size: 18px;
+    background-color: #d9d5d4;
+    color: black;
+}
+ 
