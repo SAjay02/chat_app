@@ -9,7 +9,7 @@ const Chat = () => {
     const socketIO = socketIOClient("http://localhost:3001");
 
     const [chat,setChat]=useState([]);
-
+    console.log(chat);
     useEffect(()=>
     {
         socketIO.on('chat',(chats)=>
@@ -19,21 +19,23 @@ const Chat = () => {
         return () => {
             socketIO.off('chat')
           };
-    },[])
+    },[chat])
 
        const sendToSocket = (chat) =>
         {
             socketIO.emit('chat',chat);
         }
-        const addMessage = () =>
+        const addMessage = (message) =>
         {
             const newChat = {
-                ...chat,
                 user:localStorage.getItem('user'),
-                avatar:localStorage.getItem('avatar')
+                avatar:localStorage.getItem('avatar'),
+                message
             }
-            setChat([...chat,newChat]);
-            sendToSocket([...chat,newChat])
+            const updatedChat = [...chat, newChat];
+            setChat(updatedChat);
+            // setChat([...chat,newChat]);
+            sendToSocket(updatedChat)
         }
 
     const logout = () =>
