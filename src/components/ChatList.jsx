@@ -1,37 +1,43 @@
 import React from 'react'
 import "./chatlist.css"
 import {Container} from "react-bootstrap"
-const ChatList = () => {
-    function SenderChat()
+const ChatList = ({chats}) => {
+    const user = localStorage.getItem('user')
+    function SenderChat({message,username,avatar})
     {
         return(
             <div className="chat_sender">
-                <img src="https://picsum.photos/id/237/200/300" alt=""/>
+                <img src={avatar} alt=""/>
                 <p>
-                    <strong>Ajay</strong>
-                    message
+                    <strong>{username}</strong>
+                    {message}
                 </p>
             </div>
         )
     }
 
-    function ReceiverChat()
+    function ReceiverChat({message,username,avatar})
     {
         return(
             <div className="chat_receiver">
-                <img src="https://picsum.photos/id/237/200/300" alt=""/>
+                <img src={avatar} alt=""/>
                 <p>
-                    <strong>Ajay</strong>
-                    message
+                    <strong>{username}</strong>
+                    {message}
                 </p>
             </div>
         )
     }
   return (
-    <Container>
-        <SenderChat/>
-        <ReceiverChat/>
-    </Container>
+    <div className="container chat_list">
+        {chats.map((chat, index) => (
+        chat.user === user ? (
+          <SenderChat key={index} message={chat.message} username={chat.user} avatar={chat.avatar} />
+        ) : (
+          <ReceiverChat key={index} message={chat.message} username={chat.user} avatar={chat.avatar} />
+        )
+      ))}
+    </div>
   )
 }
 

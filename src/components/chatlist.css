@@ -19,3 +19,10 @@
     border-radius: 10px;
     max-width: 60%;
 }
+
+.chat_list
+{
+    height: 75vh;
+    overflow: scroll;
+    overflow-x: hidden;
+}

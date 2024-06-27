@@ -5,7 +5,7 @@ import {Button} from "react-bootstrap"
 import "./user.css"
 import _ from "lodash"
 const User = ({setUser}) => {
-  const[userName,setUserName]=useState('');
+  const[userName,setUserName]=useState();
   const handleuser =()=>
     {
       if(!userName)
