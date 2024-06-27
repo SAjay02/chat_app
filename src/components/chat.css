@@ -3,13 +3,13 @@
 
 .chat_head_cont
 {
-    height: 50px;
+    height: 30px;
 }
 .chat_head 
 {
     display: flex;
     justify-content: space-around;
-    background-color:  #d9d5d4;
+    /* background-color:  #d9d5d4; */
     align-items: center;
     border-radius: 10px;
     font-family: "Roboto", sans-serif;

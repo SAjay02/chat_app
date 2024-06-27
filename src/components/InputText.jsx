@@ -10,8 +10,8 @@ const InputText = ({addMessage}) => {
     {
         addMessage(message);
         setMessage('');
-        console.log('Cannot send empty message');
-        console.log("msg"+addMessage)
+        // console.log('Cannot send empty message');
+        // console.log("msg"+addMessage)
     }
   return (
     <div className="inputtxt_cont">

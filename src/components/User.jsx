@@ -17,10 +17,10 @@ const User = ({setUser}) => {
   return (
     <div className="cont">
         <div className="first_cont">
-            <h4 className="first_cont_head"><FontAwesomeIcon style={{marginRight:"10px"}} icon={faUserSecret} beatFade />Chat App</h4>
+            <h4 className="first_cont_head"><FontAwesomeIcon style={{marginRight:"10px"}} icon={faUserSecret} flip />Chat App😊</h4>
         </div>
         <div className="second_cont">
-            <input className="second_cont_inpt" placeholder="Give a random number" onChange={(e)=>setUserName(e.target.value)}/>
+            <input className="second_cont_inpt" placeholder="Give Your Name" onChange={(e)=>setUserName(e.target.value)}/>
             <Button className="second_cont_btn" onClick={handleuser}>Login</Button>
         </div>
     </div>

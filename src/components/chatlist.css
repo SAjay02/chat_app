@@ -15,13 +15,23 @@
 .chat_sender p{
     padding: 10px;
     margin-left: 2px;
-    background-color:aqua;
+    background-color:rgb(175, 172, 172);
     border-radius: 10px;
     max-width: 60%;
 }
 
+/* .chat_receiver p{
+    padding: 10px;
+    margin-left: 2px;
+    background-color:rgb(175, 172, 172);
+    border-radius: 10px;
+    max-width: 30%;
+    margin-top: 2px;
+} */
+
 .chat_list
 {
+    margin-top: 10px;
     height: 75vh;
     overflow: scroll;
     overflow-x: hidden;

@@ -9,21 +9,20 @@ const ChatList = ({chats}) => {
             <div className="chat_sender">
                 <img src={avatar} alt=""/>
                 <p>
-                    <strong>{username}</strong>
-                    {message}
+                    <strong>{username} </strong>
+                    <br/>{message}
                 </p>
             </div>
         )
     }
-
     function ReceiverChat({message,username,avatar})
     {
         return(
             <div className="chat_receiver">
                 <img src={avatar} alt=""/>
                 <p>
-                    <strong>{username}</strong>
-                    {message}
+                <strong>{username} </strong>
+                    <br/>{ message}
                 </p>
             </div>
         )
