@@ -40,16 +40,25 @@ const ChatList = ({chats}) => {
         endOfMessage.current?.scrollIntoView({behavior:"smooth"})
       }
   return (
-    <div className="container chat_list">
-        {chats.length>0? chats.map((chat, index) => (
+    <>
+    {
+      chats.length>0?
+      <div className="container chat_list">
+        {chats.map((chat, index) => (
         chat.username === user ? (
           <SenderChat key={index} message={chat.message} username={chat.username} avatar={chat.avatar} />
         ) : (
           <ReceiverChat key={index} message={chat.message} username={chat.username} avatar={chat.avatar} />
         )
-      )): <Spinner animation="border" variant="primary" />}
+      ))}
       <div ref={endOfMessage}></div>
     </div>
+    :
+    <div style={{display:"flex",justifyContent:"center",marginTop:"8px"}}>
+    <Spinner animation="border" variant="primary"/>
+    </div>
+    }
+    </>
   )
 }
 
