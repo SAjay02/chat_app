@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import "./chat.css"
 import ChatList from './ChatList'
 import InputText from './InputText'
@@ -13,32 +13,43 @@ const Chat = () => {
 
     const [chat,setChat]=useState([]);
     console.log(chat);
+
+
     useEffect(()=>
     {
         socketIO.on('chat',(chats)=>
         {
             setChat(chats);
         })
+
+        socketIO.on('message',(newMsg)=>
+        {
+            setChat((prev)=>[...prev,newMsg]);
+        })
+
         return () => {
             socketIO.off('chat')
+            socketIO.off('message')
           };
-    },[chat])
-
-       const sendToSocket = (chat) =>
-        {
-            socketIO.emit('chat',chat);
-        }
+    },[])
+    //chat in array removed
+    //    const sendToSocket = (chat) =>
+    //     {
+    //         socketIO.emit('chat',chat);
+    //     }
         const addMessage = (message) =>
         {
             const newChat = {
-                user:localStorage.getItem('user'),
+                username:localStorage.getItem('user'),
+                message:message,
                 avatar:localStorage.getItem('avatar'),
-                message
+                // timestamp:
             }
             const updatedChat = [...chat, newChat];
-            setChat(updatedChat);
-            // setChat([...chat,newChat]);
-            sendToSocket(updatedChat)
+            // setChat(updatedChat);
+            // sendToSocket(updatedChat);
+
+            socketIO.emit('newMessage',newChat);
         }
 
     const logout = () =>

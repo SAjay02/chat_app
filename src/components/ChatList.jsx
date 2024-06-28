@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useRef } from 'react'
 import "./chatlist.css"
 import {Container} from "react-bootstrap"
 const ChatList = ({chats}) => {
+  const endOfMessage = useRef()
     const user = localStorage.getItem('user')
     function SenderChat({message,username,avatar})
     {
@@ -27,15 +29,25 @@ const ChatList = ({chats}) => {
             </div>
         )
     }
+    useEffect(()=>
+    {
+      ScrollBottom()
+    },[chats])
+
+    const ScrollBottom = () =>
+      {
+        endOfMessage.current?.scrollIntoView({behavior:"smooth"})
+      }
   return (
     <div className="container chat_list">
         {chats.map((chat, index) => (
-        chat.user === user ? (
-          <SenderChat key={index} message={chat.message} username={chat.user} avatar={chat.avatar} />
+        chat.username === user ? (
+          <SenderChat key={index} message={chat.message} username={chat.username} avatar={chat.avatar} />
         ) : (
-          <ReceiverChat key={index} message={chat.message} username={chat.user} avatar={chat.avatar} />
+          <ReceiverChat key={index} message={chat.message} username={chat.username} avatar={chat.avatar} />
         )
       ))}
+      <div ref={endOfMessage}></div>
     </div>
   )
 }
