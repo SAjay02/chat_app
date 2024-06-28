@@ -1,3 +1,5 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 .chat_sender
 {
     display: flex;
@@ -15,11 +17,19 @@
 .chat_sender p{
     padding: 10px;
     margin-left: 2px;
-    background-color:rgb(175, 172, 172);
+    /* background-color:rgb(175, 172, 172); */
+    background-color:#2d8eeb;
     border-radius: 10px;
     max-width: 60%;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
 }
-
+.chat_receiver p{
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
 /* .chat_receiver p{
     padding: 10px;
     margin-left: 2px;
@@ -35,4 +45,6 @@
     height: 75vh;
     overflow: scroll;
     overflow-x: hidden;
+    background-color: rgb(245, 244, 242);
+    border-radius: 10px;
 }

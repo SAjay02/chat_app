@@ -11,8 +11,8 @@ const ChatList = ({chats}) => {
         return(
             <div className="chat_sender">
                 <img src={avatar} alt=""/>
-                <p>
-                    <strong>{username} </strong>
+                <p style={{color:"white"}}>
+                    <strong style={{color:"black"}}>{username} </strong>
                     <br/>{message}
                 </p>
             </div>
