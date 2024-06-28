@@ -54,7 +54,7 @@ const ChatList = ({chats}) => {
       <div ref={endOfMessage}></div>
     </div>
     :
-    <div style={{display:"flex",justifyContent:"center",marginTop:"8px"}}>
+    <div style={{display:"flex",justifyContent:"center",marginTop:"8px",alignContent:"center"}}>
     <Spinner animation="border" variant="primary"/>
     </div>
     }
