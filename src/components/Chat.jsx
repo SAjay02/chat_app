@@ -7,9 +7,10 @@ import socketIOClient from "socket.io-client"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
 import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
+//http://localhost:3001
 const Chat = () => {
     const [user,setUser]=useState(localStorage.getItem('user'));
-    const socketIO = socketIOClient("http://localhost:3001");
+    const socketIO = socketIOClient("https://chat-back-7aoa.onrender.com");
 
     const [chat,setChat]=useState([]);
     console.log(chat);
