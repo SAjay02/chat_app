@@ -49,8 +49,11 @@ const Chat = () => {
             const updatedChat = [...chat, newChat];
             // setChat(updatedChat);
             // sendToSocket(updatedChat);
-
+            if(newChat.message!==undefined)
             socketIO.emit('newMessage',newChat);
+            else if(newChat.message===undefined)
+            alert("Message cannot be empty!👇")
+        
         }
 
     const logout = () =>

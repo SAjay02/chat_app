@@ -8,9 +8,13 @@ const InputText = ({addMessage}) => {
   // console.log("msg"+message)
   const sendMessage = ()=>
     {
-        addMessage(message);
-        setMessage('');
-        // console.log('Cannot send empty message');
+        if(message!==undefined)
+        {
+          addMessage(message);
+          setMessage('');
+        }
+        else
+        console.log("msg"+message);
         // console.log("msg"+addMessage)
     }
   return (
