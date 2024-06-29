@@ -17,11 +17,19 @@ const InputText = ({addMessage}) => {
         console.log("msg"+message);
         // console.log("msg"+addMessage)
     }
+    const handleKey = (e) =>
+    {
+        if(e.key==="Enter" && !e.shiftKey)
+        {
+          e.preventDefault();
+          sendMessage();
+        }
+    }
   return (
     <div className="inputtxt_cont">
-        <textarea name='message' id='message' rows='6' placeholder="Write something...."
+        <textarea onKeyPress={handleKey} name='message' id='message' rows='6' placeholder="Write something...."
         onChange={(e)=>setMessage(e.target.value)} value={message}></textarea>
-        <Button onClick={sendMessage} variant="dark"><FontAwesomeIcon icon={faPaperPlane} style={{marginRight:"5px"}}/>Send</Button>
+        <Button  onClick={sendMessage} variant="dark"><FontAwesomeIcon icon={faPaperPlane} style={{marginRight:"5px"}}/>Send</Button>
     </div>
   )
 }
